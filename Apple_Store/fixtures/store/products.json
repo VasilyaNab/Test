@@ -1,0 +1,102 @@
+[
+  {
+    "model": "main.product",
+    "pk": 1,
+    "fields": {
+      "name": "Apple iPhone 15 Pro Max SIM 512 ГБ, «титановый белый»",
+      "price": "142990.00",
+      "category": 1,
+      "image": "products/AppleiPhone15ProMaxWhite.png"
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 2,
+    "fields": {
+      "name": "Apple iPhone 16 Pro Max SIM 1 ТБ, «титановый чёрный»",
+      "price": "169990.00",
+      "category": 1,
+      "image": "products/AppleiPhone16ProMaxBlack.png"
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 3,
+    "fields": {
+      "name": "Apple iPad 11 (A16) Wi-Fi + Cellular 128 ГБ, серебристый",
+      "price": "64990.00",
+      "category": 2,
+      "image": "products/AppleiPad11Silvery.png"
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 4,
+    "fields": {
+      "name": "Apple iPad Air (2025) M3 13 Wi-Fi + Cellular 256 ГБ, голубой",
+      "price": "134990.00",
+      "category": 2,
+      "image": "products/AppleiPadAirBlue.png"
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 5,
+    "fields": {
+      "name": "Apple MacBook Air 15 (M4, 10C CPU/10C GPU, 2025), 16 ГБ, 512 ГБ SSD, «сияющая звезда»",
+      "price": "177990.00",
+      "category": 3,
+      "image": "products/AppleMacBookAir15ShiningStar.png"
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 6,
+    "fields": {
+      "name": "Apple MacBook Pro 14 (M4 Max 14C CPU, 32C GPU, 2024) 36 ГБ, 1 ТБ SSD, «черный космос»",
+      "price": "365990.00",
+      "category": 3,
+      "image": "products/AppleMacBookPro14BlackSpace.png"
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 7,
+    "fields": {
+      "name": "Apple Watch Ultra 2 GPS + Cellular, 49 мм, корпус из черного титана, ремешок Milanese черного цвета, размер M",
+      "price": "124990.00",
+      "category": 4,
+      "image": "products/AppleWatchUltra2Black.png"
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 8,
+    "fields": {
+      "name": "Apple Watch Series 10, 46 мм, корпус из алюминия цвета «розовое золото», спортивный браслет сливового цвета",
+      "price": "44990.00",
+      "category": 4,
+      "image": "products/AppleWatchSeries10Pink.png"
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 9,
+    "fields": {
+      "name": "Наушники Apple AirPods Max USB-C, фиолетовый",
+      "price": "60990.00",
+      "category": 5,
+      "image": "products/AppleAirPodsMaxPurple.png"
+    }
+  },
+  {
+    "model": "main.product",
+    "pk": 10,
+    "fields": {
+      "name": "Наушники Apple AirPods (4-го поколения, 2024) с шумоподавлением",
+      "price": "22990.00",
+      "category": 5,
+      "image": "products/AppleAirPods4.png"
+    }
+  }
+]

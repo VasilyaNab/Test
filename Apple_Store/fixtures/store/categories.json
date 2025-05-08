@@ -1,0 +1,7 @@
+[
+  { "model": "main.category", "pk": 1, "fields": { "name": "iPhone" } },
+  { "model": "main.category", "pk": 2, "fields": { "name": "iPad" } },
+  { "model": "main.category", "pk": 3, "fields": { "name": "MacBook" } },
+  { "model": "main.category", "pk": 4, "fields": { "name": "Apple Watch" } },
+  { "model": "main.category", "pk": 5, "fields": { "name": "AirPods" } }
+]

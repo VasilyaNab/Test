@@ -1,0 +1,52 @@
+[
+  {
+    "model": "main.store",
+    "pk": 1,
+    "fields": { "product": 1, "quantity": 25 }
+  },
+  {
+    "model": "main.store",
+    "pk": 2,
+    "fields": { "product": 2, "quantity": 40 }
+  },
+  {
+    "model": "main.store",
+    "pk": 3,
+    "fields": { "product": 3, "quantity": 100 }
+  },
+  {
+    "model": "main.store",
+    "pk": 4,
+    "fields": { "product": 4, "quantity": 15 }
+  },
+  {
+    "model": "main.store",
+    "pk": 5,
+    "fields": { "product": 5, "quantity": 10 }
+  },
+  {
+    "model": "main.store",
+    "pk": 6,
+    "fields": { "product": 6, "quantity": 23 }
+  },
+  {
+    "model": "main.store",
+    "pk": 7,
+    "fields": { "product": 7, "quantity": 34 }
+  },
+  {
+    "model": "main.store",
+    "pk": 8,
+    "fields": { "product": 8, "quantity": 40 }
+  },
+  {
+    "model": "main.store",
+    "pk": 9,
+    "fields": { "product": 9, "quantity": 50 }
+  },
+  {
+    "model": "main.store",
+    "pk": 10,
+    "fields": { "product": 10, "quantity": 0 }
+  }
+]

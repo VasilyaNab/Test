@@ -1,0 +1,48 @@
+CREATE DATABASE Apple_Store;
+USE Apple_Store;
+CREATE TABLE category(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE product(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    category_id INT NOT NULL,
+	image VARCHAR(255) NOT NULL,
+    FOREIGN KEY (category_id) REFERENCES category(id)
+);
+
+CREATE TABLE Store(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL DEFAULT 0,
+    FOREIGN KEY (product_id) REFERENCES product(id)
+);
+
+INSERT INTO category(name) VALUES ('iPhone'), ('iPad'), ('MacBook'), ('Apple Watch'), ('AirPods');
+
+INSERT INTO product(name, price, category_id, image) VALUES
+('Apple iPhone 15 Pro Max SIM 512 ГБ, «титановый белый»', 142990.00, 1, 'iPhone/AppleiPhone15ProMaxWhite.png'),
+('Apple iPhone 16 Pro Max SIM 1 ТБ, «титановый чёрный»', 169990.00, 1, 'iPhone/AppleiPhone16ProMaxBlack.png'),
+('Apple iPad 11 (A16) Wi-Fi + Cellular 128 ГБ, серебристый', 64990.00, 2, 'iPad/AppleiPad11Silvery.png'),
+('Apple iPad Air (2025) M3 13 Wi-Fi + Cellular 256 ГБ, голубой', 134990.00, 2, 'iPad/AppleiPadAirBlue.png'),
+('Apple MacBook Air 15 (M4, 10C CPU/10C GPU, 2025), 16 ГБ, 512 ГБ SSD, «сияющая звезда»',177990.00, 3, 'MacBook/AppleMacBookAir15ShiningStar.png'),
+('Apple MacBook Pro 14 (M4 Max 14C CPU, 32C GPU, 2024) 36 ГБ, 1 ТБ SSD, «черный космос»', 365990.00, 3, 'MacBook/AppleMacBookPro14BlackSpace.png'),
+('Apple Watch Ultra 2 GPS + Cellular, 49 мм, корпус из черного титана, ремешок Milanese черного цвета, размер M', 124990.00, 4, 'AppleWatch/AppleWatchUltra2Black.png'),
+('Apple Watch Series 10, 46 мм, корпус из алюминия цвета «розовое золото», спортивный браслет сливового цвета', 44990.00, 4, 'AppleWatch/AppleWatchSeries10Pink.png'),
+('Наушники Apple AirPods Max USB-C, фиолетовый', 60990.00, 5, 'AirPods/AppleAirPodsMaxPurple.png'),
+('Наушники Apple AirPods (4-го поколения, 2024) с шумоподавлением', 22990.00, 5, 'AirPods/AppleAirPods4.png');
+
+INSERT INTO Store(product_id, quantity) VALUES
+(1, 25),
+(2, 40),
+(3, 100),
+(4, 15),
+(5, 10),
+(6, 23),
+(7, 34),
+(8, 40),
+(9, 50),
+(10, 0);
