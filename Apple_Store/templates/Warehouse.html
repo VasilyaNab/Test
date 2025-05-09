@@ -1,0 +1,113 @@
+{% extends 'default/Default.html' %}
+
+{% block title %}Apple Store{% endblock %}
+
+{% block style %}
+    <style>
+        .product-card {
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .bg-warning{
+            background-color: #ffc107;
+        }
+        .stock-low {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .stock-medium {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .stock-high {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .category-badge {
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+        .card{
+            color: black;
+        }
+        .bg-primary{
+            background-color: #6d42eb !important ;
+        }
+        .product-img-container {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+            background-color: #f8f9fa;
+        }
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for product in products %}
+            <div class="col-md-6 col-lg-4 mb-3">
+                <div class="card product-card h-100">
+                    {% if product.image %}
+                        <div class="product-img-container">
+                            <img src="{{ product.image.url }}" class="product-img" alt="{{ product.name }}">
+                        </div>
+                    {% else %}
+                        <div class="product-img-container">
+                            <img src="\static\img\Not found image.png" class="img-thumbnail">
+                        </div>
+                    {% endif %}
+                    
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5>{{ product.name }}</h5>
+                            {% if product.category %}
+                                <div>
+                                    <span class="badge bg-primary category-badge">{{ product.category.name }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-2">
+                            <span class="fw-bold">Цена:</span> {{ product.price }} ₽
+                        </div>
+                        
+                        <div class="mb-3 pb-2">
+                            <span class="fw-bold">На складе:</span>
+                            <span class="
+                                {% if product.store.quantity < 10 %}
+                                    stock-low
+                                {% elif product.store.quantity < 50 %}
+                                    stock-medium
+                                {% else %}
+                                    stock-high
+                                {% endif %}">
+                                {{ product.store.quantity }} шт.
+                            </span>
+                        </div>
+                        
+                        <a href="{% url 'main:ProductDetail' pk=product.pk %}" class="btn btn-dark btn-sm align-self-start">
+                            Подробнее
+                        </a>
+                    </div>         
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-info">Нет товаров на складе</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
