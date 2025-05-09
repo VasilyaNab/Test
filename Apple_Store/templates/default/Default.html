@@ -1,4 +1,5 @@
 {% load static %}
+<!-- Основной шаблон, к которому будут подключаться остальные html страницы, для того, чтобы не дублировать код -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,7 @@
     {% block style %}{% endblock %}
 </head>
 <body>
+    <!-- Шапка -->
     <header class="d-flex align-items-center">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="{% url "main:StorePage" %}" class="LogoText mb-0 logo-link">Apple Store</a>
@@ -18,11 +20,13 @@
             {% endif %}
         </div>
     </header>
+    <!-- Основной контент -->
     <main class="align-items-center">
         <div class="container py-4">
             {% block content %}{% endblock %}
         </div>        
     </main>
+    <!-- Подвал -->
     <footer class="d-flex align-items-center">
         <div class="container d-flex justify-content-between align-items-center">
             <p class="TextFooter mb-0">Контакты: lara_nabieva@bk.ru</p>

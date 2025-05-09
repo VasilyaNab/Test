@@ -1,7 +1,10 @@
+<!-- Подключаемся к основному шаблону -->
 {% extends 'default/Default.html' %}
-
+<!-- Название страницы, которое будет отображаться в браузере -->
+<!-- Название товара -->
 {% block title %}Apple Store{% endblock %}
 
+<!-- Подключение стилей вместо css файла -->
 {% block style %}
     <style>
         .product-card {
@@ -55,37 +58,49 @@
     </style>
 {% endblock %}
 
+<!-- Основной контент -->
 {% block content %}
     <div class="row">
+         <!-- Цикл по товарам -->
         {% for product in products %}
             <div class="col-md-6 col-lg-4 mb-3">
+                <!-- Карточка товара -->
                 <div class="card product-card h-100">
+                    <!-- Блок изображения товара -->
                     {% if product.image %}
                         <div class="product-img-container">
                             <img src="{{ product.image.url }}" class="product-img" alt="{{ product.name }}">
                         </div>
                     {% else %}
+                        <!-- Заглушка, если нет изображения. Хоть у нас и поле image обязательное, но на всякий случай -->
                         <div class="product-img-container">
                             <img src="\static\img\Not found image.png" class="img-thumbnail">
                         </div>
                     {% endif %}
-                    
+
+                    <!-- Остальная информация -->
                     <div class="card-body">
+                        <!-- Заголовок и категория -->
                         <div class="d-flex justify-content-between">
+                            <!-- Название товара -->
                             <h5>{{ product.name }}</h5>
                             {% if product.category %}
                                 <div>
+                                    <!-- Название категории -->
                                     <span class="badge bg-primary category-badge">{{ product.category.name }}</span>
                                 </div>
                             {% endif %}
                         </div>
-                        
+
+                        <!-- Цена товара -->
                         <div class="mb-2">
                             <span class="fw-bold">Цена:</span> {{ product.price }} ₽
                         </div>
                         
+                        <!-- Количество товара на складе -->
                         <div class="mb-3 pb-2">
                             <span class="fw-bold">На складе:</span>
+                            <!-- Условия по количеству товара, чтобы отображался подходящий цвет -->
                             <span class="
                                 {% if product.store.quantity < 10 %}
                                     stock-low
@@ -97,7 +112,8 @@
                                 {{ product.store.quantity }} шт.
                             </span>
                         </div>
-                        
+
+                        <!-- Кнопка Подробнее -->
                         <a href="{% url 'main:ProductDetail' pk=product.pk %}" class="btn btn-dark btn-sm align-self-start">
                             Подробнее
                         </a>
@@ -105,6 +121,7 @@
                 </div>
             </div>
         {% empty %}
+        <!-- Если товаров нет - выводим сообщение "Нет товаров на складе"-->
             <div class="col-12">
                 <div class="alert alert-info">Нет товаров на складе</div>
             </div>
